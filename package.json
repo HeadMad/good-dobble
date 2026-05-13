@@ -1,0 +1,26 @@
+{
+	"name": "good-dobble",
+	"private": true,
+	"version": "1.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"deploy": "node --env-file=.env.vds scripts/deploy.js ",
+		"images:optimize": "bun scripts/optimize-images.mjs",
+		"images:symbols": "bun run images:optimize -- --dir=_tmp/symbols --outDir=static/images/baikal/symbols --height=800 --quality=75",
+		"images:assets": "bun run images:optimize -- --dir=static/images/baikal/title --quality=50  --width=2000"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^7.0.1",
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/kit": "^2.57.0",
+		"@sveltejs/vite-plugin-svelte": "^7.0.0",
+		"node-ssh": "^13.2.1",
+		"sharp": "^0.34.5",
+		"svelte": "^5.55.2",
+		"vite": "^8.0.7"
+	}
+}
